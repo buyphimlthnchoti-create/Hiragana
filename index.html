@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#2B4C9B">
+<title>ฝึกเขียนฮิรางานะ</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ฮิรางานะ">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+@font-face { font-family: "Klee One"; font-weight: 400; font-style: normal; font-display: swap; src: url(data:font/woff;base64,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) format("woff"); }
+html { padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+[hidden] { display: none !important; }
+/* Layout: practice pad on the left, gojuon chart on the right; stacks to one column on phones. */
+:root {
+  --paper: #F2F5F8;
+  --card: #FFFFFF;
+  --pad: #FCFDFE;
+  --ink: #17202E;
+  --muted: #586377;
+  --line: #D3DAE4;
+  --accent: #2B4C9B;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E2E8F5;
+  --ok: #2B7A57;
+  --ok-soft: #DDEFE6;
+  --bad: #B0352C;
+  --bad-soft: #F8E1DF;
+  --guide: rgba(23, 32, 46, 0.14);
+  --reveal: rgba(43, 76, 155, 0.38);
+  --grid: rgba(23, 32, 46, 0.22);
+  --ui: system-ui, -apple-system, "Segoe UI", "Sukhumvit Set", Thonburi, "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif;
+  --kana: "Klee One", "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #11151D; --card: #1A202D; --pad: #1E2535; --ink: #E7EBF3; --muted: #9AA6BA;
+    --line: #2C3447; --accent: #8EA7EA; --accent-ink: #0F1522; --accent-soft: #232C47;
+    --ok: #6CC49A; --ok-soft: #1D3329; --bad: #F2908A; --bad-soft: #3A2220;
+    --guide: rgba(231, 235, 243, 0.15); --reveal: rgba(142, 167, 234, 0.5); --grid: rgba(231, 235, 243, 0.22);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #11151D; --card: #1A202D; --pad: #1E2535; --ink: #E7EBF3; --muted: #9AA6BA;
+  --line: #2C3447; --accent: #8EA7EA; --accent-ink: #0F1522; --accent-soft: #232C47;
+  --ok: #6CC49A; --ok-soft: #1D3329; --bad: #F2908A; --bad-soft: #3A2220;
+  --guide: rgba(231, 235, 243, 0.15); --reveal: rgba(142, 167, 234, 0.5); --grid: rgba(231, 235, 243, 0.22);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.55;
+  padding-inline: 16px;
+  padding-block: 20px 40px;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+a { color: var(--accent); }
+
+.app { max-width: 1040px; margin: 0 auto; display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 860px) {
+  .app { grid-template-columns: minmax(0, 440px) minmax(0, 1fr); align-items: start; column-gap: 32px; }
+}
+.top { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
+.top h1 { margin: 0; font-size: 1.5rem; line-height: 1.2; font-weight: 600; text-wrap: balance; }
+.top .sub { margin: 2px 0 0; color: var(--muted); font-size: 0.85rem; }
+.sub .k { font-family: var(--kana); }
+.prog { min-width: 170px; flex: 0 1 220px; }
+.prog .row { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); margin-bottom: 4px; }
+.prog b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--ok); transition: width 0.3s; }
+
+.stage { display: grid; gap: 12px; min-width: 0; }
+.info { display: flex; align-items: center; gap: 16px; }
+.kana-big {
+  font-family: var(--kana); font-size: 3.4rem; line-height: 1; width: 5rem; height: 5rem;
+  display: grid; place-items: center; border-radius: 12px; background: var(--accent-soft); color: var(--accent);
+  flex: none;
+}
+.meta { display: grid; gap: 1px; min-width: 0; }
+.romaji { font-size: 1.5rem; font-weight: 600; letter-spacing: 0.02em; line-height: 1.2; }
+.meta .line { color: var(--muted); font-size: 0.85rem; }
+.meta .line b { color: var(--ink); font-weight: 600; }
+.hook { margin: 0; padding: 10px 12px; border-left: 3px solid var(--accent); background: var(--card); border-radius: 0 8px 8px 0; font-size: 0.92rem; }
+.hook small { display: block; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.06em; margin-bottom: 1px; }
+
+.pad-wrap { position: relative; width: 100%; aspect-ratio: 1; max-width: 100%; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--pad); }
+#pad { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; display: block; }
+#pad.watch { touch-action: auto; cursor: default; }
+.status { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); }
+.status .count { font-variant-numeric: tabular-nums; }
+.status .count.ok { color: var(--ok); font-weight: 600; }
+
+.feedback { min-height: 3.1em; padding: 8px 12px; border-radius: 8px; background: var(--card); border: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
+.feedback.ok { background: var(--ok-soft); border-color: transparent; color: var(--ok); font-weight: 500; }
+.feedback.bad { background: var(--bad-soft); border-color: transparent; color: var(--bad); }
+.feedback ul { margin: 4px 0 0; padding-left: 1.2em; font-weight: 400; }
+.feedback .head { font-weight: 600; }
+
+.seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 3px; gap: 3px; border-radius: 10px; background: var(--line); }
+.seg button { border: 0; background: transparent; border-radius: 8px; padding: 8px 6px; min-height: 40px; color: var(--muted); font-weight: 500; }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12); }
+.mode-hint { margin: 0; font-size: 0.82rem; color: var(--muted); }
+
+.tools { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { border: 1px solid var(--line); background: var(--card); border-radius: 10px; padding: 8px 14px; min-height: 44px; }
+.btn:hover { border-color: var(--accent); }
+.btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.btn[hidden] { display: none; }
+.nav { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; }
+
+.chart { min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+.chart h2 { margin: 0 0 10px; font-size: 1rem; font-weight: 600; }
+.chart h2 span { color: var(--muted); font-weight: 400; font-size: 0.82rem; margin-left: 6px; }
+.rows { display: grid; gap: 6px; }
+.crow { display: grid; grid-template-columns: 2.4rem repeat(5, minmax(0, 1fr)); gap: 6px; align-items: stretch; }
+.rlabel { font-family: var(--kana); font-size: 0.78rem; color: var(--muted); align-self: center; }
+.cell {
+  position: relative; border: 1px solid var(--line); background: var(--pad); border-radius: 8px;
+  padding: 6px 2px 4px; display: grid; justify-items: center; gap: 0; min-height: 58px;
+}
+.cell .g { font-family: var(--kana); font-size: clamp(1.35rem, 5.4vw, 1.8rem); line-height: 1.2; }
+.cell .r { font-size: 0.66rem; color: var(--muted); line-height: 1.1; }
+.cell:hover { border-color: var(--accent); }
+.cell[aria-current="true"] { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+.cell.done::after { content: ""; position: absolute; top: 5px; right: 5px; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
+.gap { visibility: hidden; }
+
+.rules { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; font-size: 0.88rem; }
+.rules summary { cursor: pointer; font-weight: 600; }
+.rules ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--muted); display: grid; gap: 4px; }
+.rules li b { color: var(--ink); font-weight: 600; }
+.reset { margin-top: 12px; background: none; border: 0; padding: 4px 0; color: var(--muted); font-size: 0.8rem; text-decoration: underline; min-height: 32px; }
+.credit { margin: 12px 0 0; font-size: 0.75rem; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+</head>
+<body>
+
+
+<div class="app">
+  <header class="top">
+    <div>
+      <h1>ฝึกเขียนฮิรางานะ</h1>
+      <p class="sub"><span class="k">ひらがな</span> · ตัวอักษรพื้นฐาน 46 ตัว เขียนด้วยนิ้วหรือเมาส์</p>
+    </div>
+    <div class="prog">
+      <div class="row"><span>เขียนได้แล้ว</span><b id="progText">0 / 46</b></div>
+      <div class="bar"><i id="progBar"></i></div>
+    </div>
+  </header>
+
+  <section class="stage" aria-label="พื้นที่ฝึกเขียน">
+    <div class="info">
+      <div class="kana-big" id="kanaBig" aria-hidden="true">あ</div>
+      <div class="meta">
+        <div class="romaji" id="romaji">a</div>
+        <div class="line">อ่านแบบไทย <b id="thai">อะ</b></div>
+        <div class="line">เขียน <b id="stk">3</b> เส้น</div>
+      </div>
+    </div>
+    <p class="hook"><small>ตัวช่วยจำ</small><span id="hook"></span></p>
+
+    <div class="seg" role="group" aria-label="โหมดฝึก">
+      <button type="button" id="modeWatch" aria-pressed="true">ดูลำดับเส้น</button>
+      <button type="button" id="modeGuided" aria-pressed="false">ทีละเส้น</button>
+      <button type="button" id="modeRecall" aria-pressed="false">จำเอง</button>
+    </div>
+    <p class="mode-hint" id="modeHint"></p>
+
+    <div class="pad-wrap"><canvas id="pad" aria-label="กระดานเขียน"></canvas></div>
+    <div class="status">
+      <span class="count" id="count">ทั้งหมด 3 เส้น</span>
+      <span id="tip"></span>
+    </div>
+    <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+
+    <div class="tools">
+      <button type="button" class="btn" id="replay">เล่นซ้ำ</button>
+      <button type="button" class="btn primary" id="check" hidden>ตรวจ</button>
+      <button type="button" class="btn" id="undo" hidden>ย้อนเส้น</button>
+      <button type="button" class="btn" id="clear" hidden>ล้าง</button>
+      <button type="button" class="btn" id="reveal" aria-pressed="false" hidden>เฉลย</button>
+      <button type="button" class="btn" id="speak">ฟังเสียง</button>
+    </div>
+    <div class="nav">
+      <button type="button" class="btn" id="prev" aria-label="ตัวก่อนหน้า">ก่อนหน้า</button>
+      <button type="button" class="btn primary" id="doneNext">เขียนได้แล้ว ไปตัวถัดไป</button>
+      <button type="button" class="btn" id="next" aria-label="ตัวถัดไป">ถัดไป</button>
+    </div>
+  </section>
+
+  <section class="chart" aria-label="ตารางฮิรางานะ">
+    <h2>ตารางโกจูอง <span>แตะตัวอักษรเพื่อเลือก</span></h2>
+    <div class="rows" id="rows"></div>
+    <details class="rules">
+      <summary>วิธีใช้ทั้งสามโหมด</summary>
+      <ul>
+        <li><b>ดูลำดับเส้น</b> ดูแอนิเมชันการเขียนทีละเส้นตามหมายเลข กดเล่นซ้ำได้</li>
+        <li><b>ทีละเส้น</b> เขียนตามจุดวงกลมและลูกศร แอพตรวจจุดเริ่ม ทิศทาง และรูปเส้นทุกครั้งที่ยกนิ้ว</li>
+        <li><b>จำเอง</b> เขียนทั้งตัวโดยไม่มีเส้นนำ แล้วกด ตรวจ เพื่อดูว่าเส้นไหนถูก ผิดทิศ หรือผิดลำดับ ถ้าผ่านทุกเส้นจะถูกบันทึกว่าเขียนได้แล้ว</li>
+        <li>กฎจำง่าย: บนก่อนล่าง ซ้ายก่อนขวา และแนวนอนก่อนแนวตั้งเมื่อสองเส้นตัดกัน</li>
+      </ul>
+    </details>
+    <button type="button" class="reset" id="reset">ล้างความคืบหน้าทั้งหมด</button>
+    <p class="credit">ข้อมูลลำดับเส้นจาก <a href="https://kanjivg.tagaini.net" target="_blank" rel="noopener">KanjiVG</a> โดย Ulrich Apel ใช้ภายใต้สัญญาอนุญาต CC BY-SA 3.0 การตรวจของแอพเป็นการประมาณจากรูปร่างและทิศทางของเส้น</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var STROKES = {"あ":["M31.01,33c0.88,0.88,2.75,1.82,5.25,1.75c8.62-0.25,20-2.12,29.5-4.25c1.51-0.34,4.62-0.88,6.62-0.5","M49.76,17.62c0.88,1,1.82,3.26,1.38,5.25c-3.75,16.75-6.25,38.13-5.13,53.63c0.41,5.7,1.88,10.88,3.38,13.62","M65.63,44.12c0.75,1.12,1.16,4.39,0.5,6.12c-4.62,12.26-11.24,23.76-25.37,35.76c-6.86,5.83-15.88,3.75-16.25-8.38c-0.34-10.87,13.38-23.12,32.38-26.74c12.42-2.37,27,1.38,30.5,12.75c4.05,13.18-3.76,26.37-20.88,30.49"],"い":["M21.5,29.66c2.01,2.17,2.61,4.68,2.17,7.43c-3.09,19.16-1.03,32.01,7.93,41.45c6.12,6.45,6.26,3.14,7.04-5.21","M72.96,36.51c9.44,8.05,17.79,18.82,18.41,33.83"],"う":["M42,15.5c5.62,2.12,9.62,3,12.88,3c8.27,0,8,1.12-0.38,5.5","M33,42.38c2.12,1.12,4.12,2.88,8.5,1.38c4.38-1.5,12.75-7.12,18.5-7c5.75,0.12,10.25,5,10.25,18c0,15.49-8.25,30.24-24.37,41.24"],"え":["M40.52,13.25c5.62,2.12,10,3,14.12,3c8.27,0,8,1.12-0.38,5.5","M32.52,45.12c1.88,1.25,4.5,1.75,7.38,0.62c3.29-1.29,17-7.88,21.25-9.88c4.25-2,8.32,0.04,4.38,4.62c-12.26,14.27-27.26,31.52-39.51,44.4c-3.26,3.42-0.58,3.54,1.5,1.37c13.5-14.12,18.12-20.12,23.62-20.12c7.13,0,3.5,16.75,6.75,22.38c3.25,5.63,19.12,3.75,26.12,2.12"],"お":["M22.88,35.12c1.38,1,3.62,2.38,6,2.12c2.38-0.26,19.62-5.12,21.12-5.74c1.5-0.62,4-1.25,5.88-2","M41.5,16.12c2.25,1,3.59,4.39,3.12,7.38c-2.5,16.12-3.37,45.53-2.25,58.38c0.75,8.62-0.64,10.45-7.12,7.12c-5.13-2.62-13.75-8-13.75-12.38c0-7.5,24.38-23.62,44.75-23.62c17.25,0,25,8.25,25,17.25c0,8.25-9.38,18.88-26.75,21","M73,22.12c5.38,2.62,8.88,5.88,10.62,8.25c2.27,3.08,0.38,4.5-1.12,5"],"か":["M24.62,38.62c1.88,1.62,4.65,2.33,8.62,1c25.5-8.5,29.5-4.13,29.5,7.62c0,9.38-1.24,17.46-4.25,25.25c-7.62,19.76-10.87,17.39-16.12,10.89","M48.5,17.5c1,1.38,1.29,4.7,0.5,7.12c-5,15.25-18.02,40.93-19.62,43.88c-3.12,5.75-6.38,11.88-9.38,16.25","M77.37,31.62c7.5,6.88,13.25,15.75,15,24.88"],"き":["M30.5,30.25c1.88,0.75,4.64,1.06,5.88,0.88c6.75-1,22.25-4.5,26.5-6c2.17-0.76,3.5-1.25,4.88-2.12","M36.25,48.7c2.01,0.85,4.97,1.2,6.29,0.99c7.23-1.13,23.82-5.09,28.37-6.79c2.32-0.86,3.75-1.41,5.22-2.4","M42,14.12c1.5,0.88,3.13,2.94,4,5.12c5.5,13.76,16,29.26,26.37,40.76c7.64,8.47,9.12,9.38-6,3.88","M33.75,83.25c10.62,9.75,27.25,8.62,38.12,5"],"く":["M60.66,15c0.5,1.62,0.35,5.44-1,7.38c-6.75,9.62-14.3,19.08-18.62,24.5c-4,5-3.79,7.03-0.88,11c5.5,7.5,12.75,18.75,17.62,27.25c1.48,2.59,2.75,4.75,4.5,8.62"],"け":["M24.67,19.75c1.25,1.5,2.62,3.75,2.12,6.38c-3,15.88-6.5,29.5-4.88,44.62c2.02,18.84,2.25,4.75,6.75-3.5","M53.67,38.62c2.12,1.38,4.28,1.89,6.88,1.5c8.25-1.25,15.39-2.57,20.62-4c2.76-0.74,5.26-1.12,6.88-1.12","M71.67,14.38c2.13,1.37,2.88,3.35,2.88,5.12c0,11.62,0.12,20.38,0.12,30.12c0,20.75-0.62,30.88-12.5,42.25"],"こ":["M34.75,26.75c1.12,0.88,2.91,2.01,6,1.5c7.62-1.25,14.11-2.56,22.38-2.62c15.5-0.12,5.88,5-5.75,9","M30,68.12c2.25,14.5,15.26,17.96,31,16.75c6.5-0.5,11.88-1.25,17.62-2.88"],"さ":["M27,38.9c2.42,1.33,5.38,1.47,8.32,1.06c8.79-1.24,28.67-7.76,34.15-10.43c2.79-1.36,3.78-1.91,6.28-3.53","M41.5,13.88c1.5,0.88,3.63,2.94,4.5,5.12c5.5,13.75,15.25,27.62,26.87,39.5c7.98,8.15,6.38,10-6,3.12","M35.25,80.5c4.5,11.75,20.88,12.5,38.38,7.5"],"し":["M39.12,17.5c1.25,3.12,0.93,6.74,0.38,10.25c-2.12,13.5-3,26.5-3,39.12c0,27.38,19.88,30.12,45.5,17.25"],"す":["M15.5,37.12c2.88,2.12,6.94,1.51,12.75,0.25c16.12-3.5,36.14-5.38,46.62-6.5c7-0.75,11.88-0.62,17.75,0.12","M57.62,13.38c2,1.5,2.75,3.25,2.75,5.88c0,10.38,0,35.12,0,40.75c0,14.62-15.62,16.38-15.62,1.75c0-14.25,18-14.12,18,6.38c0,13.25-7.75,21.5-16,28.38"],"せ":["M16.5,49.93c2.88,2.42,6.86,1.57,12.75,0.53c19-3.34,33-5.72,47.12-7.64c6.99-0.95,11.88-1.21,17.75-0.36","M69.74,17.75c2,1.5,2.75,3.25,2.75,5.88c0,10.38,0,17.88,0,23.5c0,25.62-5.75,23.25-11.88,19","M35.62,26.25c2,1.5,2.75,3.25,2.75,5.88c0,10.38,0,28.38,0,34c0,14.5,6.38,19.55,20.14,19.55c10.24,0,13.74,0.07,22.61-1.68"],"そ":["M38.4,22c1.88,1.25,4.98,1.05,7.5,0.38c6.5-1.75,13.25-3.75,19.38-5.38c4.63-1.23,7.18,2.06,3.62,5.25c-12.12,10.87-31.14,24.4-40,30.25c-6.25,4.12-5.88,5.75,1.38,3.88c17.08-4.42,35.96-8.68,50.12-10.38c9.38-1.12,9.62,0.12,0.5,1.38c-15.82,2.17-34.38,14.25-34.38,26.5c0,12.88,11.62,20.38,31.5,16.62"],"た":["M24.38,35.38c1.38,0.62,3.88,1.51,6.38,1.12c6.5-1,16.25-2.88,24.88-4.75c2.64-0.57,5.38-1.5,7.62-2.38","M45,16.88c0.75,1.25,0.87,3.62,0.38,5.25c-6.35,20.94-12.75,36.37-18.88,52.37c-1.36,3.56-4.75,11.75-6,14.62","M56.38,53.25c12.38-2.75,18.25-3.7,23.62-3.12c15.12,1.62-1.12,2.25-4.25,4.88","M54.13,82.25c4.38,7,14.25,8.12,34.5,5.62"],"ち":["M24.5,32.62c1.38,0.62,3.88,1.51,6.38,1.12c6.5-1,18.25-4.12,26.88-6c2.64-0.57,5.38-1.5,7.62-2.38","M45.62,15.62c0.75,1.25,0.71,3.58,0.38,5.25c-3,15-4.25,22.59-8.38,38.62c-3.25,12.62-5.38,11.12,3.62,4.38c8.29-6.21,19.75-9.5,28.5-9.5c8.62,0,14.58,5.88,14.5,14.5c-0.12,13.5-16.5,20.62-29.88,23.25"],"つ":["M14,44.75c1.88,1.62,4.68,2.09,8.12,0.62c17.88-7.62,30-11.12,44.88-10.88c12.56,0.21,22.98,7.17,22.87,19.17c-0.18,18.77-24.75,28.71-45.01,32.08"],"て":["M20.5,26.38c1.87,1.62,4.42,1.97,8.12,1.37c21.75-3.5,33-5.12,50.12-8.38c12.34-2.34,13-0.88,0.38,1.38c-17.89,3.19-33.78,19.12-33.78,37.62c0,20.5,17.91,30.25,35.16,30.25"],"と":["M35.5,18.38c1.74,0.74,3.62,2.62,4.12,5.37c0.5,2.75,4.75,25,5.38,28.12","M78.12,25.5c0.25,1.88,0.04,4.09-2.25,5.75c-6.37,4.63-13.22,8.49-22.75,15.25c-12.88,9.12-21.62,18.38-21.62,27.5c0,10.12,8.5,13.88,26.88,13.88c6.25,0,14.75-0.12,21.62-1.25"],"な":["M22.88,28.96c1.18,0.58,3.3,1.1,5.47,1.05c5.53-0.13,10.9-0.98,16.52-2.42c4.82-1.23,9.13-3.12,11.38-4.22","M42.99,14c0.63,0.89,0.56,2.52,0.31,3.72c-2.96,14.16-7.95,26.56-14.25,37.87c-2.05,3.69-4.25,7.24-6.55,10.65","M72.26,23.25c6.88,2.5,12.62,5.62,14.75,9.5c4.06,7.41-0.25,3.38-3.5,3.88","M68.88,44.62c-1,1.88-2.14,5.24-1.88,8.25c0.62,7,1.5,13.12,1.5,20.62c0,20-27.88,19.75-27.88,9.38c0-5.62,8.25-8.25,13.88-8.25c8.75,0,21.5,3.25,29.75,11.5"],"に":["M24.53,22.75c1.25,1.5,1.62,3.75,1.12,6.38c-3,15.88-9,32.5-7.38,47.62c2.02,18.84,4.5,5.75,8.5-3.5","M53.2,30.64c0.96,0.79,2.44,1.58,5.1,1.35c6.98-0.61,15.01-3.3,22.04-3.36c13.19-0.11,1.5,3.75-8.39,7.35","M52.53,68c1.76,12.92,11.92,16.01,24.23,14.93c5.08-0.45,8.9-0.8,14.27-2.06"],"ぬ":["M25.38,28.5c2,1.38,2.97,3.23,3.38,5.88c1.87,12.18,4.12,23.92,8.54,34.67c1.79,4.36,3.96,8.33,6.84,12.46","M57.12,19.25c0.88,2.12,1.06,3.79,0.62,5.88c-3.12,15-13.14,39.81-18.12,48.62c-11.87,21-20.62,1.25-20.62-4.5c0-22.63,43.75-44.25,62.36-29.59c7.66,6.03,9.8,14.58,9.14,23.34c-2,26.75-32.88,28.38-32.88,16.88c0-9.38,17.38-7.12,27.12-1.12c3.1,1.91,7.25,5.25,9.5,7.5"],"ね":["M33.29,14.5c1.62,1.62,2.1,3.21,1.88,5.88c-1.03,11.93-2.06,31.66-2.53,53.12c-0.1,4.62-0.18,9.31-0.22,14","M17.16,37.88c1.62,0.88,3.25,1.38,5.62,0.75c2.14-0.56,7.8-2.31,12.37-4.03c6.26-2.35,6.88-1.47,3.12,3.63c-5.56,7.53-13.02,17.38-18.48,26.77c-5.6,9.62-3.45,8.3,2,3c19.12-18.62,38.5-39.12,54.12-39.12c11.38,0,12.88,11.25,12.88,32.5c0,28.62-30.18,24.88-30.18,16.26c0-9.63,18.73-7.82,28.06-1.88c2.75,1.75,5.88,4.88,7.5,6.75"],"の":["M53.82,28.62c1,1.5,1.34,4.12,0.88,6.62c-1.75,9.5-6.89,25-10.75,33.12c-9.63,20.26-16.55,14.74-24.38-1.98c-9.13-19.5,23.5-48.88,50.63-40.38c32.38,10.15,28,54.62-4.75,60.88"],"は":["M24.51,18c1.25,1.5,2.15,4,1.62,6.62c-3.5,17.62-6.98,36.4-4,54.88c2.5,15.5,1.12,2,5.62-6.25","M49.64,37.89c2.41,1.57,4.85,2.16,7.8,1.71c9.36-1.43,17.46-2.94,23.4-4.57c3.12-0.86,5.96-1.29,7.8-1.29","M69.77,16.5c2.25,2.12,2.88,4.12,2.88,6.5c0,2.38,1.5,38.62,1.5,48c0,22.5-30.62,19.62-30.62,10.5c0-9.75,23.88-5.62,29.5-2.88c5.62,2.74,11.98,8.26,13.36,9.38"],"ひ":["M20,25.12c1.25,0.88,3.75,2.25,6.5,1.38c2.75-0.87,7.31-2.38,11.38-4.5c6-3.12,8.42-1.01,4.25,4c-27.13,32.62-23.76,58.5-1.52,62.88c18.07,3.56,37.63-16.38,35.63-56.51c-0.72-14.5-0.17-14.78,4.12-1.75c3.76,11.38,10.26,20.76,16.14,26.5"],"ふ":["M42.63,15.62c3.62,3.38,7.5,5.38,12.74,6.13c9.59,1.37,3.5,3.38-1.88,6.12","M43.63,46.88c1.88,4.62,7.5,9.41,14.25,17.5c10.62,12.74,0.49,30-19.13,21.62","M16.5,73.38c0.75,4,1.88,8.12,5,10.12c1.16,0.74,0.12-3.38,13.25-9.12","M80.13,61.88c5.12,3.38,10.28,7.49,11.38,8.88c6.75,8.5-0.25,4.62-4.62,7.12"],"へ":["M15,48.75c2.25,1.62,4.67,1.96,7-0.38c3.62-3.62,7.46-6.54,11.25-10.5c5.5-5.75,8.48-4.75,13.12-0.88c12.12,10.12,30.38,25.12,33.38,27.38c3,2.26,12.37,10.38,13.87,11.63"],"ほ":["M24.51,18.75c1.25,1.5,2.15,4,1.62,6.62c-3.5,17.63-6.98,37.4-4,55.88c2.5,15.5,1.12,2,5.62-6.25","M53.08,21.13c1.9,1.28,3.82,1.76,6.14,1.4c7.36-1.17,13.73-2.4,18.41-3.73c2.46-0.7,4.69-1.05,6.13-1.05","M53.83,44.3c2.21,1.44,4.46,1.98,7.16,1.57c8.59-1.31,15.78-2.44,21.23-3.94c2.87-0.79,5.72-1.18,7.41-1.18","M72.51,23c1.38,1.62,1.62,4.12,1.62,6.5c0,2.38,2,35.12,2,44.5c0,17.5-29.88,17.12-29.88,8c0-9.75,21.38-7.88,29.5-2.88c5.33,3.28,12,8.25,13.38,9.38"],"ま":["M29.83,32.28c2.2,1.15,4.43,1.5,7.14,1.26c11.54-1.04,25.94-3.12,34.66-4.85c2.87-0.57,5.45-0.44,7.13-0.44","M33.83,51.84c2.45,1.61,4.94,1.72,7.94,1.26c9.52-1.46,17.87-3.1,27.03-5.16c3.22-0.72,6.34-1.32,8.21-1.32","M55.81,14c1.52,1.8,1.8,4.57,1.8,7.19c0,2.63,0.46,43.88,0.46,54.25c0,21.3-30.07,19.96-30.07,9.86c0-10.79,25.88-9.93,38.57-3.18c6.12,3.25,11.55,6.38,14.8,9.13"],"み":["M32.5,26c1.88,1.75,4.06,1.7,6.88,1.25c3.88-0.62,7.62-1.75,11.88-3.12c4.26-1.37,6.25-0.12,4.5,5.12c-1.75,5.24-6.66,17.39-12,30.12c-13.63,32.51-29.26,29.26-29.26,18.63c0-14.25,20.48-15.36,33-13.5c18.5,2.75,30,6.62,44.38,14.25","M79.38,54.75c0.75,2.38,0.49,4.37,0,6.25c-2.12,8.12-7.5,25-22.12,33.75"],"む":["M19.59,31.65c2.1,1.55,4.24,1.66,6.81,1.21c8.17-1.41,15.33-2.98,23.19-4.96c2.76-0.69,5.44-1.27,7.05-1.27","M37.02,15.5c1.62,1.25,2.31,2.88,2.12,5.25c-0.88,11.12-1.5,20.75-4,34.88c-3.61,20.44-19.25,16.99-18.62,7.37c0.5-7.74,6.25-12.86,12.62-13.5c5-0.5,14.28,1.93,5.88,15c-12.62,19.62-11.42,24.51,5.11,25.54c10.98,0.68,19.26,0.72,28.49-0.92c14.15-2.5,7.4-2.63,7.4-11.13","M78.52,36.25c6.88,3.12,11.71,5.95,14.88,10.12c6.25,8.25-1.38,3.62-4.5,4.5"],"め":["M27.48,31.75c1.75,1,2.41,3.09,2.5,5.25c0.5,11.62,2.75,23.5,7.25,31.38c1.39,2.44,5.38,8.5,7.25,10.38","M59.6,19.38c1,1.5,1.35,4.12,0.88,6.62c-2.75,14.62-13.62,37.75-20.1,47.24c-12.28,17.14-16.78,13.14-22.28,0.64c-5.38-15.38,26.4-42.18,53.42-35.28c29.08,8.27,23.96,46.02-7.98,50.15"],"も":["M49.17,14.75c1.88,1.88,1.86,4.52,1.12,8c-3,14.25-5,26.62-7,42.12c-2.55,19.73-0.75,29.88,17,29.86c20.25-0.02,28.63-13.11,20.01-35.73","M26.54,34.62c1.12,0.88,2.87,2.21,6,2c11.12-0.75,20-2.12,27.74-3.46c3.88-0.67,5.88-1.17,8.88-1.04","M26.42,53.38c-1.5,4,1,6.75,7.75,6.75c8.75,0,17.62-1,22.88-1.88c2.01-0.33,5.38-1,7.5-1.75"],"や":["M18,49.38c1.88,1.62,5.25,2.5,8.62,0.88c18.51-8.88,35.76-19.38,50.83-19.26c9.02,0.14,16.01,4.13,15.93,12.29c0,8.33-10.88,16.58-24.5,17.83","M47.13,15.88c5.12,0.88,10.41,4.05,11.5,6.62c2.12,5-1,2.38-2.88,2.62","M30,24.38c2.38,1.88,3.28,2.87,3.88,5.25c2.62,10.5,11.12,41.12,14.75,52.5c0.65,2.04,1.88,6.25,2.88,9.38"],"ゆ":["M21.05,25.38c1.38,1.5,2.02,4.13,1.5,6.25c-2.88,11.75-4,22.25-2.12,35c2.77,18.85,1.12,3.88,3.25-1.5c9-22.75,27.24-34.5,44.38-34.5c16.88,0,21.88,11.38,21.88,20.25c0,27.38-30.88,29.62-43,16.75","M58.42,16.75c2.62,1.75,3.17,3.13,3.5,7.12c0.88,10.5,1.4,18.72,1.62,29.38c0.5,24-6.25,32-12.38,39.25"],"よ":["M58.24,35.38c7.5-1.28,13.74-2.63,18.5-4.1c2.5-0.77,4.77-1.15,6.25-1.15","M54.62,13.88c2.25,2.12,2.98,4.13,2.88,6.5c-0.75,17-0.12,34.88,1.39,53.5c1.88,23.07-34.89,20.88-34.89,11.5c0-12,26.25-8,35.98-4.12c8.1,3.23,11.52,4.88,18.52,10.38"],"ら":["M35.33,15c3.75,3,9.22,4.41,16.5,4.25c11.12-0.25-0.25,2.38-1.25,3.5","M35.83,35.75c-2.14,4.34-2.79,8.67-3.11,13.24c-0.42,5.84-0.31,12.05-2.14,19.13c-3.16,12.27,1.49,4.77,3,3.5c11.88-10,21.7-12.67,32.61-12.49c9.21,0.15,16.85,5.19,16.76,13.88c-0.12,13.6-14.24,21.49-32.49,22.49"],"り":["M38.75,25.25c1.25,1.5,2.24,4.03,1.62,6.62c-2.88,12.13-6.29,29.65-4.25,42.38c2,12.5,1.75-0.75,5.62-6.25","M69.37,18.75c2.25,2.12,2.88,4.12,2.88,6.5c0,2.38,0,26.38,0,35.75c0,16.5-5,25.75-12.62,33.12"],"る":["M34.31,20.38c1.75,1.25,4.62,2.62,8.5,1.5c3.88-1.12,9.62-2.5,15.62-4.62c6-2.12,7.5-0.12,4.38,4.25c-3.12,4.37-18.89,24.62-27.75,34c-8.5,9-13.09,11.89,0.75,3.25c15.62-9.75,43-10.88,43,13.38c0,22.5-40.88,24.5-40.88,12.62c0-11.25,18.12-8.75,24.38-0.38"],"れ":["M34.48,13c1.5,1.38,2.83,3.74,2.5,6.38c-0.5,4-2.75,44.5-2.75,52.88c0,8.38,0.12,16.62,0.12,19.5","M16.98,40.75c2.12,1.38,3.74,1.46,7.5,0c4.5-1.75,6.55-2.66,13-5.5c4.25-1.88,4.4,0.24,2.5,3.5c-5.25,9-10.5,16.75-18.88,27.62c-7.55,9.81-6.93,12.85,3.25,3.12c14-13.38,20.34-19.76,33.88-32.5c6.38-6,19.39-12.09,18.14,0.88c-1.02,10.63-1.89,22.13-2.29,30.75c-1.02,21.71,11.53,18,20.15,8.63"],"ろ":["M36.95,21.88c1.5,2,4.62,3.62,8.5,2.5c3.88-1.12,8.12-2.25,14.12-4.38c6-2.13,6.53-0.1,3.38,4.25c-7.88,10.88-18,22.75-27.5,35.25c-7.49,9.86-10.68,11.32,2.88,2.25c17.38-11.62,46.62-14,46.62,8.12c0,15.62-16,22.5-32.12,25.12"],"わ":["M38.53,14.75c1.5,1.38,2.22,3.73,2,6.38c-1,11.87-2.75,44.49-2.75,52.87c0,8.38-0.62,16.62-0.62,19.5","M17.53,40.75c2.12,1.38,3.68,1.3,7.5,0c5.88-2,9.8-3.16,16.25-6c4.25-1.88,6.12,0,2.75,4c-6.72,7.96-13,16.5-22.12,27.88c-7.75,9.66-7.54,12.21,3,2.88c21.88-19.38,49.75-35.62,63.5-21c14.36,15.27,1.62,36.62-23.38,42.62"],"を":["M28.56,27.87c1.62,1.13,3.17,1.64,6.01,1.12c10.86-1.99,16.74-3.37,24.71-4.72c3.64-0.62,5.65-0.93,8.4-0.75","M49.93,14.38c0.75,1,1.48,3.22,0.38,5.62c-4.62,10.12-10,20.75-17.12,30.25c-9.25,12.33-9.25,11.19,2.12,2.5c9-6.88,23.75-12.12,22.88,19.88","M83.06,39.88c0.62,1.75,0,4-3,5.75c-3,1.75-49.62,24.16-44.75,38.25c3.28,9.48,17.93,9.12,29.98,7.75c4.48-0.51,9.15-1.12,12.4-1.75"],"ん":["M56.35,16.5c0.75,1.75,1.13,5.83-0.38,8.25c-7,11.25-27.22,43.47-33.88,54.37c-9,14.75-7.62,16.25,1.5,1.25c17.86-29.36,32-23.76,32-6.75c0,25,19,26.5,34.25-5"]};
+
+  var RAW = [
+    'あ|a|อะ|3|คนอ้าปากกว้างร้อง "อา"',
+    'い|i|อิ|2|เสาสองต้นยืนคู่กัน เหมือนปลาไหล (eel) สองตัว',
+    'う|u|อุ|2|คนก้มตัวหลบ แล้วร้อง "อู"',
+    'え|e|เอะ|2|นกแปลกตัวหนึ่งยืนร้อง "เอ"',
+    'お|o|โอะ|3|คนตกใจจนร้อง "โอ้!" มือชูขึ้น',
+    'か|ka|กะ|3|เสียง "คา" ใกล้กับ "กา" ลองนึกถึงตัวกากางปีกบิน',
+    'き|ki|คิ|4|กุญแจ (key) ที่มีสองขีดเป็นฟันกุญแจ',
+    'く|ku|คุ|1|ปากนกคุกคู (cuckoo) ที่อ้าออก',
+    'け|ke|เคะ|3|ถังเบียร์ (keg) ตั้งตรง มีขีดอยู่ข้างๆ',
+    'こ|ko|โคะ|2|ปลาคาร์ป (koi) สองตัวนอนซ้อนกัน',
+    'さ|sa|ซะ|3|ซามูไรยืนถือดาบ',
+    'し|shi|ชิ|1|เบ็ดตกปลา โยนลงน้ำ "ชิ้ว"',
+    'す|su|สุ|2|สปริงที่ม้วนห้อยลงมา เสียง "สุ"',
+    'せ|se|เซะ|3|คนใส่หมวกแหลมเดินเซ',
+    'そ|so|โซะ|1|สายซอที่ซิกแซก ลากลงมาเส้นเดียว',
+    'た|ta|ทะ|4|เหมือนเขียนตัว t กับ a ติดกัน (ta)',
+    'ち|chi|จิ|2|เลข 5 ที่กลับด้าน',
+    'つ|tsu|ทสึ|1|คลื่นลูกเดียว (tsunami)',
+    'て|te|เทะ|1|มือที่ยื่นออกมา (คำว่า "มือ" ในภาษาญี่ปุ่นอ่านว่า te)',
+    'と|to|โทะ|2|หนามเล็กๆ ตำนิ้วเท้า (toe)',
+    'な|na|นะ|4|คนนั่งพนมมือ ขอร้อง "นะ นะ"',
+    'に|ni|นิ|3|เข่า (knee) งอ มีขีดสองเส้นอยู่ข้างๆ',
+    'ぬ|nu|นุ|2|เส้นก๋วยเตี๋ยว (noodle) ที่ม้วนเป็นปม',
+    'ね|ne|เนะ|2|แมว (ねこ neko) นั่งหางม้วน',
+    'の|no|โนะ|1|ป้ายห้าม "No" เป็นวงก้นหอยวงเดียว',
+    'は|ha|ฮะ|3|เสียงหัวเราะ "ฮ่า" ปากอ้ากว้าง',
+    'ひ|hi|ฮิ|1|คนยิ้มแฉ่ง หัวเราะ "ฮิฮิ"',
+    'ふ|fu|ฟุ|4|ภูเขาไฟฟูจิ มีควันลอยขึ้น',
+    'へ|he|เฮะ|1|เนินเขาเตี้ยๆ ขึ้นถึงยอดแล้วร้อง "เฮ"',
+    'ほ|ho|โฮะ|4|เหมือน は แต่มีหลังคาเพิ่ม ร้อง "โฮ"',
+    'ま|ma|มะ|3|แม่ยืนผูกผ้ากันเปื้อน "มา"',
+    'み|mi|มิ|2|เหมือนเลข 2 ตามด้วยเลข 1 (21)',
+    'む|mu|มุ|3|วัว (moo) มีเขาและหางที่ม้วน',
+    'め|me|เมะ|2|ดวงตา (คำว่า "ตา" ในภาษาญี่ปุ่นอ่านว่า me) มีขนตายาว',
+    'も|mo|โมะ|3|เบ็ดตกปลาที่มีเหยื่อสองอัน (more)',
+    'や|ya|ยะ|3|จามรี (yak) มีเขางอ',
+    'ゆ|yu|ยุ|2|ปลาตัวอ้วนว่ายน้ำ หางยื่นออกมา',
+    'よ|yo|โยะ|2|โยโย่ที่ห้อยลงมาจากนิ้ว',
+    'ら|ra|ระ|2|กระต่าย (rabbit) ตัวเล็กกำลังกระโดด',
+    'り|ri|ริ|2|สองเส้นเหมือนผมเปียห้อยสองข้าง',
+    'る|ru|รุ|1|เหมือนเลข 3 แต่ปลายเส้นเป็นห่วง',
+    'れ|re|เระ|2|คล้าย ね แต่หางสะบัดออก เหมือนคนวิ่ง',
+    'ろ|ro|โระ|1|เหมือนเลข 3 ที่ไม่มีห่วง (เทียบกับ る)',
+    'わ|wa|วะ|2|คนโบกมือร้อง "วา!"',
+    'を|wo|โอะ|3|ใช้บอกกรรมของประโยค อ่านว่า "โอ" เหมือน お',
+    'ん|n|น|1|เสียง "น" ท้ายคำ เหมือนตัว n เอียงๆ'
+  ];
+  var KANA = RAW.map(function (l) {
+    var p = l.split('|');
+    return { k: p[0], r: p[1], t: p[2], n: +p[3], h: p[4] };
+  });
+  var INDEX = {};
+  KANA.forEach(function (d, i) { INDEX[d.k] = i; });
+  var ROWS = [
+    ['あ行', 'あいうえお'], ['か行', 'かきくけこ'], ['さ行', 'さしすせそ'], ['た行', 'たちつてと'],
+    ['な行', 'なにぬねの'], ['は行', 'はひふへほ'], ['ま行', 'まみむめも'], ['や行', 'や_ゆ_よ'],
+    ['ら行', 'らりるれろ'], ['わ行', 'わ___を'], ['ん', 'ん____']
+  ];
+
+  /* ---------- stroke checking (pure functions, units are KanjiVG's 109 x 109 box) ---------- */
+  var N = 32;
+  /*CHECK_START*/
+  var TOL = { guided: { ds: 22, de: 26, dm: 14 }, recall: { ds: 27, de: 31, dm: 18 } };
+  function dist(a, b) { var dx = a[0] - b[0], dy = a[1] - b[1]; return Math.sqrt(dx * dx + dy * dy); }
+  function plen(p) { var L = 0; for (var i = 1; i < p.length; i++) L += dist(p[i - 1], p[i]); return L; }
+  function resample(p, n) {
+    var out = [];
+    if (!p.length) return out;
+    var L = plen(p);
+    if (L < 1e-6) { for (var i = 0; i <= n; i++) out.push([p[0][0], p[0][1]]); return out; }
+    var step = L / n, target = 0, segStart = 0;
+    out.push([p[0][0], p[0][1]]);
+    target = step;
+    for (var k = 1; k < p.length && out.length <= n; k++) {
+      var d = dist(p[k - 1], p[k]);
+      while (segStart + d >= target - 1e-9 && out.length <= n) {
+        var t = d === 0 ? 0 : (target - segStart) / d;
+        out.push([p[k - 1][0] + (p[k][0] - p[k - 1][0]) * t, p[k - 1][1] + (p[k][1] - p[k - 1][1]) * t]);
+        target += step;
+      }
+      segStart += d;
+    }
+    while (out.length <= n) out.push([p[p.length - 1][0], p[p.length - 1][1]]);
+    return out;
+  }
+  function judge(u, r, tol) {
+    var n = u.length - 1, dm = 0, dr = 0;
+    for (var i = 0; i <= n; i++) { dm += dist(u[i], r[i]); dr += dist(u[i], r[n - i]); }
+    dm /= n + 1; dr /= n + 1;
+    var ds = dist(u[0], r[0]), de = dist(u[n], r[n]);
+    var lu = plen(u), lr = plen(r);
+    var res = { ds: ds, de: de, dm: dm, dr: dr, ratio: lu / lr, ok: false, why: null };
+    if (lu < 8 || res.ratio < 0.5) res.why = 'short';
+    else if (res.ratio > 2.5 && lu - lr > 40) res.why = 'long';
+    else if (dr < dm && dr <= tol.dm * 1.15) res.why = 'reversed';
+    else if (ds > tol.ds) res.why = 'start';
+    else if (dm > tol.dm || de > tol.de) res.why = 'shape';
+    else res.ok = true;
+    return res;
+  }
+  function bboxP(strokes) {
+    var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    strokes.forEach(function (s) { s.forEach(function (p) {
+      if (p[0] < x0) x0 = p[0]; if (p[0] > x1) x1 = p[0];
+      if (p[1] < y0) y0 = p[1]; if (p[1] > y1) y1 = p[1];
+    }); });
+    return { x0: x0, y0: y0, x1: x1, y1: y1, w: x1 - x0, h: y1 - y0, cx: (x0 + x1) / 2, cy: (y0 + y1) / 2 };
+  }
+  function fitTo(userStrokes, refBox) {
+    var ub = bboxP(userStrokes);
+    var s = Math.max(refBox.w, refBox.h) / Math.max(ub.w, ub.h, 1);
+    return { s: s, ub: ub, rb: refBox, apply: function (p) { return [(p[0] - ub.cx) * s + refBox.cx, (p[1] - ub.cy) * s + refBox.cy]; } };
+  }
+  function evaluate(userStrokes, refStrokes, refBox, n) {
+    var T = fitTo(userStrokes, refBox);
+    var us = userStrokes.map(function (s) { return resample(s.map(T.apply), n); });
+    var per = [];
+    us.forEach(function (u, i) {
+      var res;
+      if (i >= refStrokes.length) { res = { ok: false, why: 'extra' }; }
+      else {
+        res = judge(u, refStrokes[i].pts, TOL.recall);
+        if (!res.ok) {
+          for (var j = 0; j < refStrokes.length; j++) {
+            if (j !== i && judge(u, refStrokes[j].pts, TOL.recall).ok) { res.why = 'order'; res.should = j; break; }
+          }
+        }
+      }
+      per.push(res);
+    });
+    var missing = Math.max(0, refStrokes.length - us.length);
+    var allOk = missing === 0 && us.length === refStrokes.length && per.every(function (r) { return r.ok; });
+    return { T: T, per: per, missing: missing, allOk: allOk };
+  }
+  /*CHECK_END*/
+
+  /* ---------- reference strokes ---------- */
+  var NS = 'http://www.w3.org/2000/svg';
+  var measSvg = document.createElementNS(NS, 'svg');
+  measSvg.setAttribute('width', '0'); measSvg.setAttribute('height', '0');
+  measSvg.setAttribute('aria-hidden', 'true');
+  measSvg.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden';
+  var measPath = document.createElementNS(NS, 'path');
+  measSvg.appendChild(measPath);
+  document.body.appendChild(measSvg);
+  var REFC = {};
+  function ref(k) {
+    if (REFC[k]) return REFC[k];
+    var strokes = STROKES[k].map(function (d) {
+      measPath.setAttribute('d', d);
+      var L = measPath.getTotalLength(), pts = [];
+      for (var i = 0; i <= N; i++) { var q = measPath.getPointAtLength(L * i / N); pts.push([q.x, q.y]); }
+      return { d: d, len: L, pts: pts, path: new Path2D(d) };
+    });
+    var all = new Path2D();
+    strokes.forEach(function (s) { all.addPath(s.path); });
+    REFC[k] = { strokes: strokes, all: all, bbox: bboxP(strokes.map(function (s) { return s.pts; })) };
+    return REFC[k];
+  }
+
+  var $ = function (id) { return document.getElementById(id); };
+  var canvas = $('pad'), ctx = canvas.getContext('2d');
+  var KEY = 'hiragana-practice-done';
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var state = { idx: 0, mode: 'watch', reveal: false, strokes: [], cur: null, flash: null, result: null, fails: 0, anim: null, done: {}, size: 300 };
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    if (saved && typeof saved === 'object') state.done = saved;
+  } catch (e) {}
+  function persist() { try { localStorage.setItem(KEY, JSON.stringify(state.done)); } catch (e) {} }
+  function doneCount() { return Object.keys(state.done).length; }
+
+  /* ---------- chart ---------- */
+  var rowsEl = $('rows');
+  var cells = {};
+  ROWS.forEach(function (row) {
+    var wrap = document.createElement('div');
+    wrap.className = 'crow';
+    var lab = document.createElement('div');
+    lab.className = 'rlabel';
+    lab.textContent = row[0];
+    wrap.appendChild(lab);
+    row[1].split('').forEach(function (ch) {
+      if (ch === '_') {
+        var g = document.createElement('div');
+        g.className = 'gap';
+        wrap.appendChild(g);
+        return;
+      }
+      var i = INDEX[ch];
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cell';
+      b.setAttribute('aria-label', KANA[i].k + ' ' + KANA[i].r);
+      b.innerHTML = '<span class="g">' + KANA[i].k + '</span><span class="r">' + KANA[i].r + '</span>';
+      b.addEventListener('click', function () { select(i); });
+      cells[i] = b;
+      wrap.appendChild(b);
+    });
+    rowsEl.appendChild(wrap);
+  });
+
+  /* ---------- drawing ---------- */
+  function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+  function ease(p) { return p * p * (3 - 2 * p); }
+  function strokeDur(st) { return clamp(st.len * 14, 500, 1300); }
+  function timeline(R) {
+    var start = [], dur = [], t = 0;
+    R.strokes.forEach(function (st) { var d = strokeDur(st); start.push(t); dur.push(d); t += d + 300; });
+    return { start: start, dur: dur, total: t - 300 };
+  }
+
+  function fit() {
+    var r = canvas.getBoundingClientRect();
+    var dpr = window.devicePixelRatio || 1;
+    state.size = r.width || 300;
+    canvas.width = Math.round(state.size * dpr);
+    canvas.height = Math.round(state.size * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    redraw();
+  }
+
+  function userStroke(pts, s, color, width) {
+    ctx.save();
+    ctx.strokeStyle = color; ctx.fillStyle = color;
+    ctx.lineWidth = width; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    if (pts.length === 1) {
+      ctx.beginPath(); ctx.arc(pts[0][0] * s, pts[0][1] * s, width / 2, 0, Math.PI * 2); ctx.fill();
+    } else if (pts.length > 1) {
+      ctx.beginPath();
+      ctx.moveTo(pts[0][0] * s, pts[0][1] * s);
+      for (var i = 1; i < pts.length - 1; i++) {
+        var mx = (pts[i][0] + pts[i + 1][0]) / 2 * s, my = (pts[i][1] + pts[i + 1][1]) / 2 * s;
+        ctx.quadraticCurveTo(pts[i][0] * s, pts[i][1] * s, mx, my);
+      }
+      var last = pts[pts.length - 1];
+      ctx.lineTo(last[0] * s, last[1] * s);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function partial(st, p, color, w) {
+    ctx.save();
+    ctx.strokeStyle = color; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    if (p < 1) { ctx.setLineDash([st.len, st.len]); ctx.lineDashOffset = st.len * (1 - p); }
+    ctx.stroke(st.path);
+    ctx.restore();
+  }
+
+  /* number badge, positioned in canvas pixels */
+  function badge(px, py, num, k, fill, text, outline) {
+    var r = 4.7 * k;
+    ctx.save();
+    ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2);
+    if (outline) { ctx.fillStyle = css('--pad'); ctx.fill(); ctx.lineWidth = 1.2; ctx.strokeStyle = fill; ctx.stroke(); }
+    else { ctx.fillStyle = fill; ctx.fill(); }
+    ctx.fillStyle = outline ? fill : text;
+    ctx.font = '600 ' + Math.round(5.8 * k) + 'px system-ui, -apple-system, "Sukhumvit Set", Thonburi, "Noto Sans Thai", sans-serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(String(num), px, py + 0.4 * k);
+    ctx.restore();
+  }
+
+  function arrow(st, k, color) {
+    var a = st.pts[2], b = st.pts[5];
+    var ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+    var cx = st.pts[4][0] * k, cy = st.pts[4][1] * k, sz = 5.2 * k;
+    ctx.save();
+    ctx.translate(cx, cy); ctx.rotate(ang);
+    ctx.fillStyle = color;
+    ctx.beginPath(); ctx.moveTo(sz, 0); ctx.lineTo(-sz * 0.7, sz * 0.75); ctx.lineTo(-sz * 0.7, -sz * 0.75); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  }
+
+  function redraw() {
+    var s = state.size, k = s / 109, d = KANA[state.idx], R = ref(d.k), mode = state.mode;
+    var accent = css('--accent'), ink = css('--ink');
+    ctx.clearRect(0, 0, s, s);
+    ctx.fillStyle = css('--pad');
+    ctx.fillRect(0, 0, s, s);
+
+    ctx.save();
+    ctx.strokeStyle = css('--grid');
+    ctx.lineWidth = 1;
+    ctx.setLineDash([5, 5]);
+    ctx.beginPath();
+    ctx.moveTo(s / 2, 8); ctx.lineTo(s / 2, s - 8);
+    ctx.moveTo(8, s / 2); ctx.lineTo(s - 8, s / 2);
+    ctx.stroke();
+    ctx.restore();
+
+    var w = Math.max(6, s * 0.04);
+
+    if (mode === 'recall') {
+      if (state.result) {
+        var T = state.result.T;
+        ctx.save();
+        ctx.scale(k, k); ctx.translate(T.ub.cx, T.ub.cy); ctx.scale(1 / T.s, 1 / T.s); ctx.translate(-T.rb.cx, -T.rb.cy);
+        ctx.strokeStyle = css('--reveal'); ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        ctx.stroke(R.all);
+        ctx.restore();
+        state.strokes.forEach(function (p, i) {
+          var r = state.result.per[i];
+          userStroke(p, s, r && r.ok ? css('--ok') : css('--bad'), w);
+        });
+        state.strokes.forEach(function (p, i) {
+          var r = state.result.per[i];
+          badge(p[0][0] * s, p[0][1] * s, i + 1, k, r && r.ok ? css('--ok') : css('--bad'), css('--pad'), false);
+        });
+      } else {
+        if (state.reveal) {
+          ctx.save(); ctx.scale(k, k);
+          ctx.strokeStyle = css('--reveal'); ctx.lineWidth = 7; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+          ctx.stroke(R.all);
+          ctx.restore();
+          R.strokes.forEach(function (st, i) { badge(st.pts[0][0] * k, st.pts[0][1] * k, i + 1, k, accent, css('--accent-ink'), false); });
+        }
+        state.strokes.forEach(function (p) { userStroke(p, s, ink, w); });
+      }
+      if (state.cur) userStroke(state.cur, s, ink, w);
+      return;
+    }
+
+    // faint full glyph as the trace guide (watch and guided modes)
+    ctx.save(); ctx.scale(k, k);
+    ctx.strokeStyle = css('--guide'); ctx.lineWidth = 7; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.stroke(R.all);
+    ctx.restore();
+
+    if (mode === 'watch') {
+      var a = state.anim, tl = timeline(R);
+      var el = a && a.kind === 'all' ? performance.now() - a.t0 : Infinity;
+      var prog = R.strokes.map(function (st, i) { return el === Infinity ? 1 : clamp((el - tl.start[i]) / tl.dur[i], 0, 1); });
+      ctx.save(); ctx.scale(k, k);
+      R.strokes.forEach(function (st, i) { if (prog[i] > 0) partial(st, ease(prog[i]), ink, 5.5); });
+      ctx.restore();
+      R.strokes.forEach(function (st, i) { if (prog[i] > 0) badge(st.pts[0][0] * k, st.pts[0][1] * k, i + 1, k, accent, css('--accent-ink'), false); });
+      return;
+    }
+
+    // guided mode
+    var g = state.strokes.length, n = R.strokes.length;
+    if (g < n) {
+      var cs = R.strokes[g], an = state.anim;
+      ctx.save(); ctx.scale(k, k);
+      if (an && an.kind === 'one' && an.i === g) {
+        partial(cs, ease(clamp((performance.now() - an.t0) / an.total, 0, 1)), accent, 6.5);
+      } else {
+        ctx.globalAlpha = 0.5;
+        ctx.strokeStyle = accent; ctx.lineWidth = 7; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        ctx.stroke(cs.path);
+      }
+      ctx.restore();
+    }
+    for (var i = g + 1; i < n; i++) {
+      badge(R.strokes[i].pts[0][0] * k, R.strokes[i].pts[0][1] * k, i + 1, k, css('--muted'), '', true);
+    }
+    state.strokes.forEach(function (p) { userStroke(p, s, ink, w); });
+    if (state.flash) userStroke(state.flash, s, css('--bad'), w);
+    if (state.cur) userStroke(state.cur, s, ink, w);
+    if (g < n) {
+      arrow(R.strokes[g], k, accent);
+      badge(R.strokes[g].pts[0][0] * k, R.strokes[g].pts[0][1] * k, g + 1, k, accent, css('--accent-ink'), false);
+    }
+  }
+
+  /* ---------- animation ---------- */
+  var raf = 0;
+  function cancelAnim() { if (raf) cancelAnimationFrame(raf); raf = 0; state.anim = null; }
+  function startAnim(kind, i) {
+    cancelAnim();
+    if (RM) { redraw(); return; }
+    var R = ref(KANA[state.idx].k);
+    var total = kind === 'all' ? timeline(R).total : strokeDur(R.strokes[i]);
+    var hold = kind === 'one' ? 700 : 0;
+    var a = { kind: kind, i: i, t0: performance.now(), total: total };
+    state.anim = a;
+    (function frame() {
+      if (state.anim !== a) return;
+      redraw();
+      if (performance.now() - a.t0 < total + hold) raf = requestAnimationFrame(frame);
+      else { raf = 0; state.anim = null; redraw(); }
+    })();
+  }
+
+  /* ---------- input ---------- */
+  function pt(e) {
+    var r = canvas.getBoundingClientRect();
+    return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height];
+  }
+  function guidedDone() { return state.mode === 'guided' && state.strokes.length >= KANA[state.idx].n; }
+
+  canvas.addEventListener('pointerdown', function (e) {
+    if (state.mode === 'watch' || guidedDone()) return;
+    e.preventDefault();
+    try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+    if (state.anim) cancelAnim();
+    state.flash = null;
+    if (state.mode === 'recall' && state.result) { state.result = null; setFeedback('', ''); }
+    state.cur = [pt(e)];
+    redraw();
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    if (!state.cur) return;
+    e.preventDefault();
+    state.cur.push(pt(e));
+    redraw();
+  });
+  function endStroke() {
+    if (!state.cur) return;
+    var cur = state.cur;
+    state.cur = null;
+    if (state.mode === 'guided') judgeGuided(cur);
+    else { state.strokes.push(cur); }
+    updateStatus();
+    redraw();
+  }
+  canvas.addEventListener('pointerup', endStroke);
+  canvas.addEventListener('pointercancel', endStroke);
+
+  var WHY_GUIDED = {
+    short: 'เส้นสั้นเกินไป ลากให้ยาวตามเส้นนำ',
+    long: 'เส้นยาวเกินไป ลากให้พอดีกับเส้นนำ',
+    reversed: 'ทิศทางกลับด้าน เริ่มที่จุดวงกลมแล้วลากตามลูกศร',
+    start: 'จุดเริ่มไม่ตรง ให้เริ่มที่จุดวงกลม',
+    shape: 'รูปเส้นยังไม่ตรง ลองลากทับเส้นจางๆ ให้ใกล้ที่สุด'
+  };
+  var WHY_RECALL = {
+    short: 'สั้นเกินไป', long: 'ยาวเกินไป', reversed: 'ทิศทางกลับด้าน',
+    start: 'จุดเริ่มอยู่ผิดตำแหน่ง', shape: 'รูปเส้นไม่ตรง', extra: 'เป็นเส้นที่เกินมา'
+  };
+
+  function judgeGuided(cur) {
+    var d = KANA[state.idx], R = ref(d.k), g = state.strokes.length;
+    var u = resample(cur.map(function (p) { return [p[0] * 109, p[1] * 109]; }), N);
+    var r = judge(u, R.strokes[g].pts, TOL.guided);
+    if (r.ok) {
+      state.strokes.push(cur);
+      state.fails = 0;
+      if (g + 1 === R.strokes.length) setFeedback('ok', 'เขียนครบ ' + R.strokes.length + ' เส้นตามลำดับแล้ว ลองไปโหมด จำเอง เพื่อทดสอบโดยไม่มีเส้นนำ');
+      else setFeedback('ok', 'เส้นที่ ' + (g + 1) + ' ถูกต้อง ต่อไปเส้นที่ ' + (g + 2));
+    } else {
+      state.fails++;
+      state.flash = cur;
+      setTimeout(function () { if (state.flash === cur) { state.flash = null; redraw(); } }, 650);
+      setFeedback('bad', WHY_GUIDED[r.why]);
+      if (state.fails >= 2) startAnim('one', g);
+    }
+  }
+
+  function runCheck() {
+    var d = KANA[state.idx], n = state.strokes.length;
+    if (!n) { setFeedback('', 'ยังไม่ได้เขียนอะไร ลองเขียนก่อนแล้วกด ตรวจ'); return; }
+    var R = ref(d.k);
+    var userU = state.strokes.map(function (s) { return s.map(function (p) { return [p[0] * 109, p[1] * 109]; }); });
+    var ev = evaluate(userU, R.strokes, R.bbox, N);
+    state.result = ev;
+    var items = [];
+    ev.per.forEach(function (r, i) {
+      if (r.ok) return;
+      if (r.why === 'order') items.push('เส้นที่ ' + (i + 1) + ' ลำดับผิด เส้นนี้ควรเขียนเป็นเส้นที่ ' + (r.should + 1));
+      else items.push('เส้นที่ ' + (i + 1) + ' ' + WHY_RECALL[r.why]);
+    });
+    if (ev.missing > 0) items.push('ขาดอีก ' + ev.missing + ' เส้น');
+    var okc = ev.per.filter(function (r) { return r.ok; }).length;
+    if (ev.allOk) {
+      state.done[d.k] = 1;
+      persist();
+      setFeedback('ok', 'ถูกต้องทั้ง ' + R.strokes.length + ' เส้น ทั้งลำดับ ทิศทาง และรูปเส้น บันทึกว่าเขียนได้แล้ว');
+    } else {
+      setFeedback('bad', 'ถูก ' + okc + ' จาก ' + R.strokes.length + ' เส้น', items);
+    }
+    updateUI();
+  }
+
+  /* ---------- UI state ---------- */
+  function setFeedback(tone, text, items) {
+    var el = $('feedback');
+    el.className = 'feedback' + (tone ? ' ' + tone : '');
+    el.textContent = '';
+    if (!text) return;
+    var head = document.createElement('div');
+    head.className = 'head';
+    head.textContent = text;
+    el.appendChild(head);
+    if (items && items.length) {
+      var ul = document.createElement('ul');
+      items.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+      el.appendChild(ul);
+    }
+  }
+
+  function updateStatus() {
+    var d = KANA[state.idx], n = state.strokes.length, el = $('count'), tip = $('tip');
+    el.className = 'count';
+    if (state.mode === 'watch') {
+      el.textContent = 'ทั้งหมด ' + d.n + ' เส้น';
+      tip.textContent = 'ตามหมายเลขในวงกลม';
+    } else if (state.mode === 'guided') {
+      if (n >= d.n) { el.textContent = 'ครบ ' + d.n + ' เส้นแล้ว'; el.classList.add('ok'); }
+      else el.textContent = 'เส้นที่ ' + (n + 1) + ' จาก ' + d.n;
+      tip.textContent = 'เริ่มที่จุดวงกลม ตามลูกศร';
+    } else {
+      el.textContent = 'เส้นที่เขียน ' + n + ' / ' + d.n;
+      tip.textContent = 'ยกนิ้วหนึ่งครั้ง = หนึ่งเส้น';
+    }
+  }
+
+  var HINTS = {
+    watch: 'ดูวิธีเขียนทีละเส้นตามหมายเลข แล้วกด เล่นซ้ำ ได้เรื่อยๆ',
+    guided: 'เขียนทีละเส้นตามจุดวงกลมและลูกศร แอพตรวจทันทีทุกครั้งที่ยกนิ้ว',
+    recall: 'เขียนทั้งตัวจากความจำ แล้วกด ตรวจ เพื่อเช็กลำดับ ทิศทาง และรูปเส้น'
+  };
+
+  function updateUI() {
+    var d = KANA[state.idx], mode = state.mode;
+    $('kanaBig').textContent = (mode !== 'recall' || state.reveal || state.result) ? d.k : '?';
+    $('romaji').textContent = d.r;
+    $('thai').textContent = d.t;
+    $('stk').textContent = d.n;
+    $('hook').textContent = d.h;
+    ['watch', 'guided', 'recall'].forEach(function (m) {
+      $('mode' + m.charAt(0).toUpperCase() + m.slice(1)).setAttribute('aria-pressed', mode === m ? 'true' : 'false');
+    });
+    $('modeHint').textContent = HINTS[mode];
+    canvas.className = mode === 'watch' ? 'watch' : '';
+    $('replay').hidden = mode === 'recall';
+    $('replay').textContent = mode === 'watch' ? 'เล่นซ้ำ' : 'ดูเส้นนี้';
+    $('replay').disabled = guidedDone();
+    $('check').hidden = mode !== 'recall';
+    $('undo').hidden = mode === 'watch';
+    $('clear').hidden = mode === 'watch';
+    var rv = $('reveal');
+    rv.hidden = mode !== 'recall';
+    rv.setAttribute('aria-pressed', state.reveal ? 'true' : 'false');
+    rv.textContent = state.reveal ? 'ซ่อนเฉลย' : 'เฉลย';
+    $('doneNext').textContent = state.done[d.k] ? 'ไปตัวถัดไป' : 'เขียนได้แล้ว ไปตัวถัดไป';
+    Object.keys(cells).forEach(function (i) {
+      var c = cells[i];
+      c.classList.toggle('done', !!state.done[KANA[i].k]);
+      if (+i === state.idx) c.setAttribute('aria-current', 'true'); else c.removeAttribute('aria-current');
+    });
+    var dc = doneCount();
+    $('progText').textContent = dc + ' / ' + KANA.length;
+    $('progBar').style.width = (dc / KANA.length * 100) + '%';
+    updateStatus();
+    redraw();
+  }
+
+  function resetPad() {
+    cancelAnim();
+    state.strokes = []; state.cur = null; state.flash = null; state.result = null; state.fails = 0; state.reveal = false;
+    setFeedback('', '');
+  }
+
+  function select(i) {
+    state.idx = (i + KANA.length) % KANA.length;
+    resetPad();
+    updateUI();
+    if (state.mode === 'watch') startAnim('all');
+  }
+
+  function setMode(m) {
+    state.mode = m;
+    resetPad();
+    updateUI();
+    if (m === 'watch') startAnim('all');
+  }
+
+  $('modeWatch').addEventListener('click', function () { setMode('watch'); });
+  $('modeGuided').addEventListener('click', function () { setMode('guided'); });
+  $('modeRecall').addEventListener('click', function () { setMode('recall'); });
+  $('replay').addEventListener('click', function () {
+    if (state.mode === 'watch') startAnim('all');
+    else if (state.mode === 'guided' && !guidedDone()) startAnim('one', state.strokes.length);
+  });
+  $('check').addEventListener('click', runCheck);
+  $('reveal').addEventListener('click', function () { state.reveal = !state.reveal; updateUI(); });
+  $('undo').addEventListener('click', function () {
+    cancelAnim();
+    state.strokes.pop(); state.result = null; state.flash = null; state.fails = 0;
+    setFeedback('', '');
+    updateUI();
+  });
+  $('clear').addEventListener('click', function () { resetPad(); updateUI(); });
+  $('prev').addEventListener('click', function () { select(state.idx - 1); });
+  $('next').addEventListener('click', function () { select(state.idx + 1); });
+  $('doneNext').addEventListener('click', function () {
+    state.done[KANA[state.idx].k] = 1;
+    persist();
+    select(state.idx + 1);
+  });
+
+  var resetTimer = null;
+  $('reset').addEventListener('click', function () {
+    var b = $('reset');
+    if (resetTimer) {
+      clearTimeout(resetTimer); resetTimer = null;
+      state.done = {}; persist();
+      b.textContent = 'ล้างความคืบหน้าทั้งหมด';
+      updateUI();
+    } else {
+      b.textContent = 'แตะอีกครั้งเพื่อยืนยัน';
+      resetTimer = setTimeout(function () { resetTimer = null; b.textContent = 'ล้างความคืบหน้าทั้งหมด'; }, 3000);
+    }
+  });
+
+  var speakBtn = $('speak');
+  if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+    speakBtn.hidden = true;
+  } else {
+    speakBtn.addEventListener('click', function () {
+      try {
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance(KANA[state.idx].k);
+        u.lang = 'ja-JP';
+        u.rate = 0.8;
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+    if (e.key === 'ArrowRight') select(state.idx + 1);
+    else if (e.key === 'ArrowLeft') select(state.idx - 1);
+  });
+
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var onTheme = function () { redraw(); };
+    if (mq.addEventListener) mq.addEventListener('change', onTheme); else if (mq.addListener) mq.addListener(onTheme);
+  }
+  new MutationObserver(function () { redraw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(canvas); else window.addEventListener('resize', fit);
+
+  fit();
+  updateUI();
+  startAnim('all');
+})();
+</script>
+<script>
+if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+  window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+}
+</script>
+</body>
+</html>
